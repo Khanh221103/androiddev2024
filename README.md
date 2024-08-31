@@ -10,7 +10,7 @@ Students are expected to:
 Student Info
 =======================
 
-* Name: *YourNameHere*
-* ID: *YourIdHere*
-* Group ID: *Your Group ID here*
-* Project Name: *Your Project Name here*
+* Name: Phung Nam Khanh
+* ID: BA12-092
+* Group ID: 18
+* Project Name: COVID-19 stats
