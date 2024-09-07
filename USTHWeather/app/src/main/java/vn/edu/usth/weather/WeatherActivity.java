@@ -1,6 +1,9 @@
 package vn.edu.usth.weather;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +23,43 @@ public class WeatherActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+//        findViewById(R.id.frameLayout);
+//        ForecastFragment forecastFragment = new ForecastFragment();
+//        getSupportFragmentManager().beginTransaction()
+//                .add(R.id.frameLayout, forecastFragment)
+//                .commit();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("start", "On start");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("resume", "On resume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("pause", "On pause");
+    }
+
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("stop", "On stop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("destroy", "On destroy");
     }
 }
