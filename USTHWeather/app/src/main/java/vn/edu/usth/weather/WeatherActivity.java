@@ -1,5 +1,6 @@
 package vn.edu.usth.weather;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,13 +24,27 @@ public class WeatherActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+        getSupportFragmentManager().beginTransaction()
+//            .replace(R.id.cloudFragment , new CloudFragment())
+                .replace(R.id.fragment_forecast, new ForecastFragment())
+                .commit();
 //        findViewById(R.id.frameLayout);
 //        ForecastFragment forecastFragment = new ForecastFragment();
 //        getSupportFragmentManager().beginTransaction()
 //                .add(R.id.frameLayout, forecastFragment)
 //                .commit();
     }
+//@Override
+//protected void onCreate(Bundle savedInstanceState) {
+//    super.onCreate(savedInstanceState);
+//    EdgeToEdge.enable(this);
+//    setContentView(R.layout.activity_main);
+//    ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+//        Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//        v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//        return insets;
+//    });
+//}
 
     @Override
     protected void onStart() {
