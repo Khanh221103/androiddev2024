@@ -1,12 +1,22 @@
 package vn.edu.usth.weather;
 
+import static vn.edu.usth.weather.R.id.*;
+import static vn.edu.usth.weather.R.id.action_edit;
+import android.annotation.SuppressLint;
+
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
+
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -33,6 +43,7 @@ public class WeatherActivity extends AppCompatActivity {
 
     private ViewPager2 viewPager;
     private TabLayout tabLayout;
+    private Toolbar toolbar;
 
 
     @Override
@@ -40,6 +51,8 @@ public class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -120,3 +133,40 @@ public class WeatherActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("destroy", "On destroy");
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.bottom, menu);
+        return true;
+    }
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        switch (item.getItemId()) {
+//            case R.id.action_reload:
+//                Toast.makeText(this, "Reload", Toast.LENGTH_SHORT).show();
+//                break;
+//
+//            case R.id.action_notification:
+//                Toast.makeText(this, "Notification", Toast.LENGTH_SHORT).show();
+//                break;
+//
+//            case action_edit:
+//                Toast.makeText(this, "Editting", Toast.LENGTH_SHORT).show();
+//                break;
+//        }
+        if (item.getItemId()== R.id.action_reload) {
+            Toast.makeText(this, "Reload", Toast.LENGTH_SHORT).show();
+        } else if (item.getItemId()== R.id.action_notification) {
+            Toast.makeText(this, "Notification", Toast.LENGTH_SHORT).show();
+        } else if (item.getItemId()== R.id.action_edit) {
+            Toast.makeText(this,"Editting", Toast.LENGTH_SHORT).show();
+        }
+        return false;
+//        return super.onOptionsItemSelected(item);
+    }
+}
