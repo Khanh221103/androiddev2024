@@ -24,15 +24,17 @@ public class WeatherActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        getSupportFragmentManager().beginTransaction()
+//        getSupportFragmentManager().beginTransaction()
 //            .replace(R.id.cloudFragment , new CloudFragment())
+//                .replace(R.id.fragment_forecast, new ForecastFragment())
+//                .commit();
+//        findViewById(R.id.frameLayout);
+        ForecastFragment forecastFragment = new ForecastFragment();
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.frameLayout, forecastFragment)
+                .replace(R.id.cloudFragment, new CloudFragment())
                 .replace(R.id.fragment_forecast, new ForecastFragment())
                 .commit();
-//        findViewById(R.id.frameLayout);
-//        ForecastFragment forecastFragment = new ForecastFragment();
-//        getSupportFragmentManager().beginTransaction()
-//                .add(R.id.frameLayout, forecastFragment)
-//                .commit();
     }
 //@Override
 //protected void onCreate(Bundle savedInstanceState) {
