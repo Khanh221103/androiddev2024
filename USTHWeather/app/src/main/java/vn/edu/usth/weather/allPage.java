@@ -6,10 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link fragment3#newInstance} factory method to
+ * Use the {@link allPage#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment3 extends Fragment {
+public class allPage extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -17,7 +17,7 @@ public class fragment3 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    public fragment3() {
+    public allPage() {
         // Required empty public constructor
     }
     /**
@@ -26,11 +26,11 @@ public class fragment3 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment fragment3.
+     * @return A new instance of fragment allPage.
      */
     // TODO: Rename and change types and number of parameters
-    public static fragment3 newInstance(String param1, String param2) {
-        fragment3 fragment = new fragment3();
+    public static allPage newInstance(String param1, String param2) {
+        allPage fragment = new allPage();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -49,6 +49,6 @@ public class fragment3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank3, container, false);
+        return inflater.inflate(R.layout.fragment_all_page, container, false);
     }
 }

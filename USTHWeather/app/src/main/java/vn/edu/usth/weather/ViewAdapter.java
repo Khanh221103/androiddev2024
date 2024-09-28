@@ -8,40 +8,31 @@ import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class ViewAdapter extends FragmentStateAdapter {
+    private static final int NUM_Page = 3;
 
-    public VIewPagerAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
     public ViewAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
-            super(fragmentManager, lifecycle);
-        }
-
-        @NonNull
-        @Override
-        public Fragment createFragment(int position) {
-            switch (position) {
-                case 0:
-                    return new Tab1Fragment();
-                return new fragment1();
-                case 1:
-                    return new Tab2Fragment();
-                return new fragment2();
-                case 2:
-                    return new Tab3Fragment();
-                case 3:
-                    return new Tab4Fragment();
-                return new fragment3();
-
-                default:
-                    return new Tab1Fragment();
-                return new fragment1();
-            }
-
-        }
-
-        @Override
-        public int getItemCount() {
-            return 4;
-            return 3;
-        }
+        super(fragmentManager, lifecycle);
     }
-    {
+
+    @NonNull
+    @Override
+    public Fragment createFragment(int position) {
+        switch (position) {
+            case 0:
+                return new allPage();
+            case 1:
+                return new allPage();
+            case 2:
+                return new allPage();
+
+            default:
+                return new allPage();
+        }
+
     }
+
+    @Override
+    public int getItemCount() {
+        return NUM_Page;
+    }
+}
