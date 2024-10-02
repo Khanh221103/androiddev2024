@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".frameTop">
+
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
         android:id="@+id/top"
@@ -14,6 +15,7 @@
         android:layout_marginTop="80dp"
         android:layout_centerHorizontal="true"
         android:background="@color/white">
+
         <TextView
             android:id="@+id/c"
             android:layout_width="wrap_content"
@@ -22,6 +24,7 @@
             android:text="12°C "
             android:textColor="@color/black"
             android:textSize="20sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,6 +33,7 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:layout_below="@+id/c"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,6 +41,7 @@
             android:text="@string/HongKong"
             android:textColor="@color/black"
             android:textSize="20sp" />
+
         <ImageView
             android:layout_width="350dp"
             android:layout_height="186dp"
@@ -45,10 +50,13 @@
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="69dp" />
+
     </RelativeLayout>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="335dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/frame" />
+
+
 </RelativeLayout>

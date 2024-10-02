@@ -36,3 +36,5 @@ public class ViewAdapter extends FragmentStateAdapter {
         return NUM_Page;
     }
 }
+
+
